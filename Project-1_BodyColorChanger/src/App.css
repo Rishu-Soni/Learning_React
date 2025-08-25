@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 60px;
+  width: 80%;
+  min-width: 750px;
+  background-color: #c4c4c4;
+  border-radius: 15px;
+}
+
+.color {
+  width: 10%;
+  min-width: 80px;
+  height: 30px;
+  margin: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 20px;
+}
+
+.color * {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 900;
+  filter: invert(.9);
+}
+
+.color:active {
+  transform: scale(0.90);
+  transition: transform 0.15s ease-in-out;
+}
+
+.Red {
+  background-color: red;
+  color: red;
+}
+
+.Green {
+  background-color: green;
+  color: green;
+}
+
+.Yellow {
+  background-color: yellow;
+  color: yellow;
+}
+
+.Blue {
+  background-color: blue;
+  color: blue;
+}
+
+.Black {
+  background-color: black;
+  color: black;
+}
+.White {
+  background-color: white;
+  color: white;
+}
+
+.Violet {
+  background-color: violet;
+  color: violet;
+}
+
+.Olive {
+  background-color: olive;
+  color: olive;
+}
