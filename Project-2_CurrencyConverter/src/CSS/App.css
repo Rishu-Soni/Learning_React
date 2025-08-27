@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    /* background-color: #fff; */
+    background-image: url("https://img.freepik.com/free-vector/global-currency-background_115579-405.jpg?size=626&ext=jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+
+}
+
+.container {
+    width: 590px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.664);
+    border-radius: 10px;
+}
+
+.convert-button {
+    width: 590px;
+    height: 50px;
+    background-color: rgb(52, 72, 255);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.swtch-buitton {
+    width: 70px;
+    height: 50px;
+    background-color: rgb(52, 72, 255);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
