@@ -1,35 +1,88 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect, useCallback, use } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  let [copyValue, setcopyValue] = useState("copy");
+  let [length, setlength] = useState(8);
+  let [numaricValue, setnumaricValue] = useState(false);
+  let [symbolValue, setsymbolValue] = useState(false);
+  let [password, setpassword] = useState("here is the password");
+
+  function GeneratePassword() {
+    let allChar = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let pass = "";
+
+    if (numaricValue) {
+      allChar += "0123456789";
+    }
+    if (symbolValue) {
+      allChar += "!@#$%^&*()_+~`|}{[]:;?><,./-=";
+    }
+
+    for (let i = 0; i < length; i++) {
+      pass += allChar.charAt(Math.floor(Math.random() * allChar.length));
+    }
+    setpassword(pass);
+  }
+
+  useCallback(GeneratePassword, [numaricValue, symbolValue, length]);
+
+  useEffect(() => {
+    GeneratePassword();
+  }, [numaricValue, symbolValue, length]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <div className="mainContainer">
+      <div className="upperDiv">
+        <input type="text" value={password} readOnly />
+        <button
+          className="copyBotton"
+          onClick={() => {
+            setcopyValue("Done");
+            setTimeout(() => {
+              setcopyValue("copy");
+            }, 1000);
+          }}
+        >
+          {copyValue}
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <div className="lowerDiv">
+        <input
+          type="range"
+          name="length"
+          className="slidRange"
+          min={1}
+          max={100}
+          value={length}
+          onChange={(e) => {
+            setlength(e.target.value);
+          }}
+        />
+        <label htmlFor="length">Length {length}</label>
+        <input
+          type="checkbox"
+          name="numaricValue"
+          className="numaricCheckbox"
+          checked={numaricValue}
+          onChange={() => {
+            setnumaricValue((prev) => !prev);
+          }}
+        />
+        <label htmlFor="numaricValue">Numbers</label>
+        <input
+          type="checkbox"
+          name="symbolValue"
+          className="charCheckbox"
+          checked={symbolValue}
+          onChange={() => {
+            setsymbolValue((prev) => !prev);
+          }}
+        />
+        <label htmlFor="symbolValue">Symbols</label>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
