@@ -40,3 +40,28 @@
 .lowerDiv>label{
     margin: 0 40px 0 16px;
 }
+
+.inputArea{
+    height: 40px;
+    width: 500px;
+    border-radius: 8px;
+    border: none;
+    padding: 0 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(71, 71, 71);
+    background-color: #faeaea;
+    margin-right: 20px;
+}
+
+.copyBotton{
+    height: 40px;
+    width: 80px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(71, 71, 71);
+    background-color: #faeaea;
+    cursor: pointer;
+}
