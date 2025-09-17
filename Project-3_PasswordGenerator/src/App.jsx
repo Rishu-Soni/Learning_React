@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="mainContainer">
       <div className="upperDiv">
-        <input type="text" value={password} readOnly />
+        <input className="inputArea" type="text" value={password} readOnly />
         <button
           className="copyBotton"
           onClick={() => {
